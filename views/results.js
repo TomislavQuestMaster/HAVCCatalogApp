@@ -3,7 +3,6 @@
     var customTitle = ko.observable("");
   
     var ITEM_LIST = "list",
-        ITEM_MAP = "map",
         ITEM_GALLERY = "gallery";
 
     var loadPanelVisible = ko.observable(false),
@@ -11,7 +10,7 @@
         listData = ko.observableArray([]),
         isLoaded = ko.observable(false),
         mapMarkers = ko.observableArray([]),
-        activeItem = ko.observable(ITEM_LIST);
+        activeItem = ko.observable(ITEM_GALLERY);
       
     function initializeResult() {
         return function (result) {
@@ -56,13 +55,35 @@
             map: function (item) {
                 return new RealtorApp.vwAV_DjeloViewModel(item);
             },
-            filter:[["HrvatskiNaslov", "contains", params.id],"or",["IzvorniNaslov", "contains", params.id]]
+            filter:createFilter(params.id)
         });
 
        return list;
-        //return list.filter(("HrvatskiNaslov", "contains", "slobodni"));
 
     }
+
+    function createFilter(word) {
+
+        var words = word.split(' ');
+
+        var result = [];
+
+        for (var i = 0; i < words.length; i++) {
+
+            var item = words[i];
+            result.push(["HrvatskiNaslov", "contains", item]);
+            result.push("or");
+            result.push(["IzvorniNaslov", "contains", item]);
+            result.push("or");
+            result.push(["Redatelj", "contains", item]);
+            if (i != words.length - 1) {
+                result.push("or");
+            }
+        }
+
+        return result;
+    }
+
 
     var viewModel = {
         title: customTitle,
@@ -73,7 +94,6 @@
         activeItem: activeItem,
         iconList: getComputedIcon(ITEM_LIST),
         mapMarkers: mapMarkers,
-        iconMap: getComputedIcon(ITEM_MAP),
         iconGallery: getComputedIcon(ITEM_GALLERY),
 
         resultsItemClick: function(item) {
@@ -82,9 +102,6 @@
      
         goToList: function () {
             viewModel.activeItem(ITEM_LIST);
-        },
-        goToMap: function () {
-            viewModel.activeItem(ITEM_MAP);
         },
         goToGallery: function () {
             viewModel.activeItem(ITEM_GALLERY);

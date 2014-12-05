@@ -9,9 +9,8 @@ window.RealtorApp = $.extend(true, window.RealtorApp, {
           "location": "after"
         },
         "commands": [
+          "gallery",
           "list",
-          "map",
-          "gallery"
         ]
       }
     },
