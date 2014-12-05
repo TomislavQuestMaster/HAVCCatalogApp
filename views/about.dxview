@@ -1,10 +1,14 @@
 <div data-options="dxView : { name: 'About', title: 'About' } " >
     <div  data-options="dxContent : { targetPlaceholder: 'content' } " >
         <div class="about" data-bind="dxScrollView: { useNative: false }">
-            <h1>HAVC Catalog App</h1>
-            <p>This is a simple app for searching property listings.</p>
-            <p>Powered by <a target="_blank" href="http://js.devexpress.com/MobileDevelopment/">DevExtreme Mobile</a>.</p>
-            <p>If you have any questions about DevExtreme, do not hesitate to contact our <a target="_blank" href="http://www.devexpress.com/support/center/">support team</a>.</p>
+            <!--div data-bind="style: { backgroundImage: 'url(' + 'images/HAVC_logo.png' + ')' }" class="image-container">
+            </div-->
+                
+            <img src="/images/HAVC_logo.png" alt="some_text"> 
+            <h1>HAVC Katalog</h1>
+            <p>Jednostavna aplikacija za pregled kataloga audio vizualnih djela</p>
+            <p>Powered by <a target="_blank" href="">MONAD</a>.</p>
+            <p>Ako imate ikakva pitanja slobodno nas kontaktirajte</a>.</p>
         </div>
     </div>
 </div>
