@@ -1,0 +1,6 @@
+<div data-options="dxView : { name: 'ResultsList' } " >
+    <div data-bind="dxList: { dataSource: dataSource }, visible: isLoaded">
+        <div data-options="dxTemplate: { name:'item' }" data-bind="template: { name: 'avdijelo-template' }, dxAction: $root.resultsItemClick" class="list-item">
+        </div>
+    </div>
+</div>

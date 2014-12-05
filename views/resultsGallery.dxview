@@ -1,0 +1,35 @@
+<div data-options="dxView : { name: 'ResultsGallery' } ">    
+    <div class="gallery" data-bind="dxGallery: { dataSource: dataSource, height: '100%', width: '100%', showIndicator: false }">
+        <div class="gallery-item" data-options="dxTemplate: { name: 'item' }">
+            <div class="gallery-container">
+                <p class="gallery-text"><span data-bind="text: '1'"></span> of <span data-bind="text: $parent.listData().length"></span> found films</p>
+                <div data-bind="dxAction: $parent.resultsItemClick, style: { backgroundImage: 'url(' + 'data/Homes/1b.jpg' + ')' }" class="image-container">
+                    <div class="fav">
+                        <div class="fav-img" data-bind=" css: { 'selected': true }"></div>
+                    </div>
+                </div>
+                <div class="description">
+                    <div class="price"><span data-bind="text: IzvorniNaslov"></span></div>
+                    <div class="place"> 
+                        <span data-bind="text: HrvatskiNaslov"></span>,
+                        <span data-bind="text: StraniNaslov"></span>,
+                    </div>
+                   
+                    <div class="place">
+                        <span style="color: #3cbc8a">HR | Škotska | 150min </span>
+                    </div>
+                    <div class="place">
+                        <span data-bind="text: Redatelj"></span>
+                    </div>
+                    <div class="place" style="padding-top:0.5em;" >
+                        <ul class="zanr-lista">
+                            <li class="zanr-element">Drama</li>
+                            <li class="zanr-element">Triler</li>
+                        </ul>
+                    </div>
+               
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

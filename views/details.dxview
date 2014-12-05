@@ -1,0 +1,103 @@
+<div data-options="dxView : { name: 'Details'} ">
+    <div class="details" data-options="dxContent : { targetPlaceholder: 'content' }">
+        <div data-bind="dxLoadPanel: { message: loadPanelMessage, visible: loadPanelVisible }"></div>
+        <div data-bind="if: isLoaded">
+           
+            <div class="details-header" data-bind="with: tmpData " style="width:100%">
+                <h2 data-bind="text: IzvorniNaslov" ></h2>
+                <p> 
+                    <span data-bind="text: HrvatskiNaslov" ></span> 
+                    <span data-bind="text: StraniNaslov"></span> 
+                </p>
+                <p>
+                    <span style="color: #3cbc8a">HR | Škotska | 150min </span>
+                </p>
+               
+                <p> Redatelj//Director: <span data-bind="text: HrvatskiNaslov"></span>  </p>
+                <ul class="zanr-lista">
+                    <li class="zanr-element">Drama</li>
+                    <li class="zanr-element">Triler</li>
+                </ul>
+            </div>
+            <div class="images" data-bind="with: tmpData ">
+                <div data-bind="dxGallery: { dataSource: $parent.images, width: '100%', height: '100%', indicatorEnabled: false, showIndicator: false, loop: true }">
+                    <div class="gallery-item" data-options="dxTemplate: { name: 'item' }">
+                        <div class="gallery-container">
+                            <div class="image-container">
+                                <div class="img" data-bind="style: { backgroundImage: $data }"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="description-details " data-bind="with: tmpData ">
+                <p>
+                    <span data-bind="text: OpisHrvatski" style="color: black"></span>
+                    <span data-bind="text: OpisStrani" style="color: red"></span>
+                </p>
+            </div>
+            <div  data-bind="with: tmpData ">
+                <div class="peoples">
+                    <p> <span class="peoples-key"> Scenarij //Screenplay  </span> <p data-bind="foreach:Scenarij"> <span class="peoples-value" data-bind="text: Ime"></span> </p> </p>
+                </div>
+                <div class="peoples">
+                    <p> <span class="peoples-key"> Producent //Producer  </span> <p data-bind="foreach:Producent"> <span class="peoples-value" data-bind="text: Ime"></span> </p> </p>
+                </div>
+                <div class="peoples">
+                    <p> <span class="peoples-key"> Fotografija //Cinematography  </span> <p data-bind="foreach:Fotografija"> <span class="peoples-value" data-bind="text: Ime"></span> </p> </p>
+                </div>
+            </div>
+            <div class="festivali" data-bind="with: tmpData ">
+                <div class="peoples">
+                    <p> <span class="peoples-key"> Festivali//Festivals  </span> <p data-bind="foreach:Festivali"> <span class="peoples-value" data-bind="text: Festival"></span> </p> </p>
+               </div>
+                </div>
+            <div class="festivali" data-bind="with: tmpData ">
+                <div class="peoples">
+                    <p> <span class="peoples-key"> Produkcijska kuca //Produced by  </span> <p data-bind="foreach:ProdukcijskaKuca"> <span class="peoples-value" data-bind="text: Ime"></span> </p> </p>
+                </div>
+                <div class="peoples">
+                    <p> <span class="peoples-key">Koproducenti //Co-producers  </span> <p data-bind="foreach:Koproducenti"> <span class="peoples-value" data-bind="text: Ime"></span> </p> </p>
+                </div>
+                <div class="peoples">
+                    <p> <span class="peoples-key"> Potpora //Support  </span> <p data-bind="foreach:Potpora"> <span class="peoples-value" data-bind="text: Ime"></span> </p> </p>
+                </div>
+            </div>
+            <!-- ko with: homeItem -->
+           <!-- <div class="right">
+            </div>
+            <div class="left">
+                <div class="left-visible">
+                    <div class="tablet-scrollable">
+                        <div class="tablet-price">
+                            <div data-bind="template: { name: 'price-template' }" data-options="dxTemplate:{ name:'item' }"></div>
+                        </div>
+                        <table class="prop">
+                            <tr><td class="prop-key">Status</td><td class="prop-value"><span data-bind="text: $parent.status"></span></td></tr>
+                            <tr><td class="prop-key">Beds</td><td class="prop-value"><span data-bind="text: Beds"></span> Beds</td></tr>
+                            <tr><td class="prop-key">Baths</td><td class="prop-value"><span data-bind="text: Baths"></span> Bath</td></tr>
+                            <tr><td class="prop-key">House Size</td><td class="prop-value"><span data-bind="text: HouseSize"></span> Sq Ft</td></tr>
+                            <tr><td class="prop-key">Lot Size</td><td class="prop-value"><span data-bind="text: LotSize"></span> Sq Ft Lot</td></tr>
+                        </table>
+                        <div class="description" data-bind="text: Features"></div>
+                        <div class="agent-info" data-bind="with: Agent">
+                            <div class="agent-photo">
+                                <img data-bind="attr: { src: Photo }" />
+                            </div>
+                            <div class="agent-contact">
+                                <span class="stat">Listing agent</span><br />
+                                <span class="name" data-bind="text: Name"></span><br />
+                                <span class="phone">Tel: </span><span class="phone" data-bind="text: Phone"></span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="gradient"></div>
+                </div>
+                <div class="fav-button-container">
+                    <div class="fav-button" data-bind="dxButton: { text: IsFavorite() ? 'Remove from Favorites' : 'Add to Favorites', clickAction: changeFavState }"></div>
+                </div>
+            </div>-->
+            <!-- /ko -->
+        </div>
+    </div>
+</div>

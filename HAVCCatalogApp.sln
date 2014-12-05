@@ -1,0 +1,28 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2013
+VisualStudioVersion = 12.0.21005.1
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{1B19158F-E398-40A6-8E3B-350508E125F1}") = "HAVCCatalogApp", "HAVCCatalogApp.dxjsproj", "{6094F601-9C84-4EE0-94B8-00B6DBB1CA32}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DataService1", "..\Visual Studio 2013\Projects\DataService1\DataService1\DataService1.csproj", "{A1B9C339-7BD1-4F26-A7F0-5260CA339BA4}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{6094F601-9C84-4EE0-94B8-00B6DBB1CA32}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6094F601-9C84-4EE0-94B8-00B6DBB1CA32}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6094F601-9C84-4EE0-94B8-00B6DBB1CA32}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6094F601-9C84-4EE0-94B8-00B6DBB1CA32}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A1B9C339-7BD1-4F26-A7F0-5260CA339BA4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A1B9C339-7BD1-4F26-A7F0-5260CA339BA4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A1B9C339-7BD1-4F26-A7F0-5260CA339BA4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A1B9C339-7BD1-4F26-A7F0-5260CA339BA4}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

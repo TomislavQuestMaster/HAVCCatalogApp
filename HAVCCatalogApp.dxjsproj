@@ -1,0 +1,471 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>6094f601-9c84-4ee0-94b8-00b6dbb1ca32</ProjectGuid>
+    <AutoAssignPort>True</AutoAssignPort>
+    <RunInSimulator>True</RunInSimulator>
+    <ApplicationPage>index.html</ApplicationPage>
+    <Name>RealtorApp</Name>
+    <RootNamespace>HAVCCatalogApp</RootNamespace>
+    <Accelerometer>False</Accelerometer>
+    <Camera>False</Camera>
+    <Capture>False</Capture>
+    <Compass>False</Compass>
+    <Connection>False</Connection>
+    <Contacts>False</Contacts>
+    <Device>False</Device>
+    <Events>False</Events>
+    <File>False</File>
+    <Geolocation>True</Geolocation>
+    <Media>False</Media>
+    <Notification>False</Notification>
+    <Storage>False</Storage>
+    <WhiteList>*</WhiteList>
+    <DebugSitePortNumber>50000</DebugSitePortNumber>
+    <UseWebDev>False</UseWebDev>
+    <DefaultDevice>iPhone</DefaultDevice>
+    <DeviceOrientation>Portrait</DeviceOrientation>
+    <ScreenOrientation>Default</ScreenOrientation>
+    <ApplicationTitle>HAVCCatalogApp</ApplicationTitle>
+    <BundleIdentifier>HAVCCatalogApp</BundleIdentifier>
+    <VersionPackage>1.0</VersionPackage>
+    <ShowSplashScreen>True</ShowSplashScreen>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\Debug\</OutputPath>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'Release' ">
+    <DebugSymbols>false</DebugSymbols>
+    <OutputPath>bin\Release\</OutputPath>
+  </PropertyGroup>
+  <ItemGroup>
+    <Content Include="cordova.js">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="css\dx.spa.css">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="css\ra.generic.css">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="css\dx.light.css">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="data\dataLayer.js">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="data\db.js">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="data\Homes\10a.jpg">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="data\Homes\10b.jpg">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="data\Homes\11a.jpg">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="data\Homes\11b.jpg">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="data\Homes\12a.jpg">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="data\Homes\12b.jpg">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="data\Homes\13a.jpg">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="data\Homes\13b.jpg">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="data\Homes\14a.jpg">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="data\Homes\14b.jpg">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="data\Homes\15a.jpg">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="data\Homes\15b.jpg">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="data\Homes\16a.jpg">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="data\Homes\16b.jpg">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="data\Homes\17a.jpg">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="data\Homes\17b.jpg">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="data\Homes\18a.jpg">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="data\Homes\18b.jpg">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="data\Homes\19a.jpg">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="data\Homes\19b.jpg">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="data\Homes\1a.jpg">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="data\Homes\1b.jpg">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="data\Homes\20a.jpg">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="data\Homes\20b.jpg">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="data\Homes\21a.jpg">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="data\Homes\21b.jpg">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="data\Homes\22a.jpg">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="data\Homes\22b.jpg">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="data\Homes\23a.jpg">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="data\Homes\23b.jpg">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="data\Homes\2a.jpg">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="data\Homes\2b.jpg">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="data\Homes\3a.jpg">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="data\Homes\3b.jpg">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="data\Homes\4a.jpg">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="data\Homes\4b.jpg">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="data\Homes\5a.jpg">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="data\Homes\5b.jpg">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="data\Homes\6a.jpg">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="data\Homes\6b.jpg">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="data\Homes\7a.jpg">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="data\Homes\7b.jpg">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="data\Homes\8a.jpg">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="data\Homes\8b.jpg">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="data\Homes\9a.jpg">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="data\Homes\9b.jpg">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="data\Persons\1.png">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="data\Persons\10.png">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="data\Persons\11.png">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="data\Persons\12.png">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="data\Persons\13.png">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="data\Persons\14.png">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="data\Persons\15.png">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="data\Persons\16.png">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="data\Persons\17.png">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="data\Persons\18.png">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="data\Persons\19.png">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="data\Persons\2.png">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="data\Persons\20.png">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="data\Persons\21.png">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="data\Persons\22.png">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="data\Persons\23.png">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="data\Persons\24.png">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="data\Persons\25.png">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="data\Persons\3.png">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="data\Persons\4.png">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="data\Persons\5.png">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="data\Persons\6.png">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="data\Persons\7.png">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="data\Persons\8.png">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="data\Persons\9.png">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="data\PropertyViewModel.js">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="data\sampleData.js">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="data\vwav_djelo-view-model.js">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="images\back.png">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="images\bcgrd.png">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="images\blackBar.png">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="images\favorites-active.png">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="images\favorites.png">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="images\find-active.png">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="images\find.png">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="images\globe-active.png">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="images\globe.png">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="images\image-active.png">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="images\image.png">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="images\info-active.png">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="images\info.png">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="images\listview-active.png">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="images\listview.png">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="images\map-marker.png">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="images\search.png">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="images\star-big%402x.png">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="images\star-big.png">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="images\star-big_selected%402x.png">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="images\star-big_selected.png">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="images\star-gal%402x.png">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="images\star-gal.png">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="images\star-gal_selected%402x.png">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="images\star-gal_selected.png">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="images\star-small%402x.png">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="images\star-small.png">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="images\star-small_selected%402x.png">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="images\star-small_selected.png">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="images\star.png">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="images\verticalBar.png">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="index.medium.css">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="index.small.css">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="index.js" />
+    <Content Include="index.html" />
+    <Content Include="index.css" />
+    <Content Include="css\dx.common.css" />
+    <Content Include="layouts\Navbar\NavbarLayout.css" />
+    <Content Include="layouts\Navbar\NavbarLayout.html" />
+    <Content Include="layouts\Navbar\NavbarLayout.js" />
+    <Content Include="js\dx.phonejs.js" />
+    <Content Include="js\globalize.min.js" />
+    <Content Include="js\jquery-1.11.1.min.js" />
+    <Content Include="js\jquery-2.1.1.min.js" />
+    <Content Include="js\knockout-3.1.0.js" />
+    <Content Include="templates.html">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="views\home.js">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="views\details.dxview">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="views\details.js">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="views\favorites.dxview">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="views\favorites.js">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="views\home.dxview">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="views\about.dxview" />
+    <Content Include="app.config.js" />
+    <Content Include="views\resultsGallery.dxview">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="views\resultsList.dxview">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="views\resultsMap.dxview">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="views\results.dxview">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="views\results.js">
+      <SubType>Content</SubType>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="css\" />
+    <Folder Include="data\" />
+    <Folder Include="data\Homes\" />
+    <Folder Include="data\Persons\" />
+    <Folder Include="js\" />
+    <Folder Include="layouts\" />
+    <Folder Include="layouts\Navbar\" />
+    <Folder Include="images" />
+    <Folder Include="views\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.Common.targets" />
+  <Target Name="Build">
+    <!--
+    <Message Text="'$(MSBuildToolsPath)'"></Message>
+    -->
+    <Message Text="Build JSProject '$(MSBuildProjectFile)':" Importance="high">
+    </Message>
+    <Message Text="Copying refenecses to output dir..." Importance="high" />
+    <MSBuild Targets="Build" Projects="@(ProjectReference)" Properties="OutputPath=$([System.IO.Path]::GetFullPath('$(OutputPath)'))">
+    </MSBuild>
+    <Message Text="Copying files to output dir..." Importance="high" />
+    <Copy SourceFiles="@(Content)" DestinationFiles="@(Content->'$(OutputPath)%(RelativeDir)%(Filename)%(Extension)')" />
+    <Message Text="Finished Build JSProject '$(MSBuildProjectFile)'." Importance="high">
+    </Message>
+  </Target>
+  <Target Name="CreateManifestResourceNames" Condition="'@(ResxWithNoCulture)@(ResxWithCulture)@(NonResxWithNoCulture)@(NonResxWithCulture)'!=''" />
+  <Target Name="Rebuild" DependsOnTargets="Clean;Build">
+  </Target>
+  <Target Name="Clean">
+    <!--
+    <Message Text="Cleaning Output files..." Importance="high" />
+    <Delete Files="@([System.IO.Path]::GetFullPath('$(OutputPath)'))" />
+    -->
+    <Message Text="Cleaning Output dir ($([System.IO.Path]::GetFullPath('$(OutputPath)')))..." Importance="high" />
+    <RemoveDir Directories="$([System.IO.Path]::GetFullPath('$(OutputPath)'))" />
+  </Target>
+</Project>
