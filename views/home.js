@@ -14,7 +14,7 @@ RealtorApp.Home = function (params) {
         loadPanelVisible(true);
         loadPanelMessage("Please wait... Loading data");
         getList();
-        RealtorApp.data.getBestOffers(isPhone ? 3 : 5).done(function (result) {
+  /*      RealtorApp.data.getBestOffers(isPhone ? 3 : 5).done(function (result) {
             $.each(result, function(index, item) {
                 listData.push({
                     image: "url(" + item.Images[0] + ")",
@@ -25,7 +25,7 @@ RealtorApp.Home = function (params) {
                 });
             });           
             loadPanelVisible(false);
-        });
+        });*/
     }
     
     function getCurrentPositionSuccess(position) {
@@ -64,12 +64,31 @@ RealtorApp.Home = function (params) {
         });
 
         list.changed.add(function () {
-            console.log("tu sam lal");
+           
             var random1 = Math.floor(Math.random() * (list.items().length));
             var random2 = Math.floor(Math.random() * (list.items().length));
             var random3 = Math.floor(Math.random() * (list.items().length));
-            randomMovies([list.items()[random1], list.items()[random2], list.items()[random3]]);
-            console.log(randomMovies());
+            var random4 = Math.floor(Math.random() * (list.items().length));
+            var random5 = Math.floor(Math.random() * (list.items().length));
+            var rm = [list.items()[random1], list.items()[random2], list.items()[random3], list.items()[random4], list.items()[random5]];
+           
+            console.log("length:" + rm.length)
+
+            $.each(rm, function (index, item) {
+                console.log("pusham");
+                listData.push({
+                    image: "url(" + item.Images()[0] + ")",
+                    price: Globalize.format(item.IzvorniNaslov, "c0"),
+                    priceCss: "price" + index,
+                    doubleCss: index ? "item" + index : "double",
+                    ID: item.ID
+                });
+            });
+
+            console.log("na kraju fora sam");
+            console.log(listData());
+            loadPanelVisible(false);
+            
         });
 
         list.load();
