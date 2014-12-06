@@ -1,6 +1,6 @@
 <div data-options="dxView : { name: 'Details'} ">
 
-    <div data-bind="dxCommand: { id: 'back', type:'back', action: '#_back' }"></div>
+    <div data-bind="dxCommand: { id: 'back', type: 'back', text: backText, action: '#_back' }"></div>
 
     <div class="details" data-options="dxContent : { targetPlaceholder: 'content' }">
         <div data-bind="dxLoadPanel: { message: loadPanelMessage, visible: loadPanelVisible }"></div>

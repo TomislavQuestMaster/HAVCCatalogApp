@@ -1,4 +1,4 @@
-﻿RealtorApp.Details = function (params) {
+﻿RealtorApp.Details = function (params, viewInfo) {
    
 
     var MAP_CONTAINER = ".details #map",
@@ -12,8 +12,19 @@
         loadPanelVisible = ko.observable(false),
         loadPanelMessage = ko.observable(""),
         title = ko.observable(""),
-        status = ko.observable("");
+        status = ko.observable(""),
+        backText = ko.observable("");
 
+    setupBackText();
+    function setupBackText() {
+        if (viewInfo.previousViewInfo.viewName == 'Home') {
+            backText("Na pretragu");
+            return;
+        }
+        if (viewInfo.previousViewInfo.viewName == 'Results') {
+            backText("Na popis");
+        }
+    }
 
     function loadData(id) {
 
@@ -108,7 +119,8 @@
         }),
         viewShowing: function () {
             loadData("1");
-        }
+        },
+        backText: backText
     };
 
     return viewModel;

@@ -1,7 +1,7 @@
-﻿RealtorApp.Results = function(params) {
+﻿RealtorApp.Results = function (params, viewInfo) {
     var isPhone = DevExpress.devices.current().screenSize === "small";
     var customTitle = ko.observable("");
-  
+
     var ITEM_LIST = "list",
         ITEM_GALLERY = "gallery";
 
