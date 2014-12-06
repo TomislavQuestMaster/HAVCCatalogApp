@@ -47,11 +47,13 @@
                 this.IzvorniNaslov(data.IzvorniNaslov);
                 this.StraniNaslov(data.StraniNaslov);
                 this.HrvatskiNaslov(data.HrvatskiNaslov);
-                this.ImageSource( "data/Homes/1a.jpg");
-                this.Images(["data/Homes/1a.jpg", "data/Homes/1b.jpg"]);
+                this.ImageSource("data/Homes/1a.jpg");
+                var random = Math.floor(Math.random() * (RealtorApp.data.movieImages.length));
+                this.Images(RealtorApp.data.movieImages[random]);
+               //this.Images(["data/Homes/1a.jpg", "data/Homes/1b.jpg"]);
                 this.Test("lalalala");
                 this.Trajanje(150);
-                this.Redatelj("Sanja Marjanovic")
+                this.Redatelj("Sanja Marjanovic");
                 this.Zanr(["Komedija", "Triler"]);
                 this.Zanr.push("Komedija");
                 this.ZemljaPorijekla(["Hrvatska", "Škotska"]);

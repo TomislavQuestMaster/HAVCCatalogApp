@@ -7,11 +7,13 @@ RealtorApp.Home = function (params) {
         listData = ko.observableArray([]),
         errorMessage = ko.observable(""),
         isSearchActive = ko.observable(false),
-        locationHandled = false;
+        locationHandled = false,
+        randomMovies = ko.observableArray([]);
 
     function loadData() {
         loadPanelVisible(true);
-        loadPanelMessage("Please wait... Loading data");     
+        loadPanelMessage("Please wait... Loading data");
+        getList();
         RealtorApp.data.getBestOffers(isPhone ? 3 : 5).done(function (result) {
             $.each(result, function(index, item) {
                 listData.push({
@@ -52,6 +54,28 @@ RealtorApp.Home = function (params) {
         loadPanelVisible(false);
     }
     
+    function getList() {
+        console.log("tu sam lal :(");
+        var list = new DevExpress.data.DataSource({
+            store: RealtorApp.db.vwAV_Djelo,
+            map: function (item) {
+                return new RealtorApp.vwAV_DjeloViewModel(item);
+            },
+        });
+
+        list.changed.add(function () {
+            console.log("tu sam lal");
+            var random1 = Math.floor(Math.random() * (list.items().length));
+            var random2 = Math.floor(Math.random() * (list.items().length));
+            var random3 = Math.floor(Math.random() * (list.items().length));
+            randomMovies([list.items()[random1], list.items()[random2], list.items()[random3]]);
+            console.log(randomMovies());
+        });
+
+        list.load();
+
+    }
+
     var viewModel = {
         listData: listData,
         loadPanelVisible: loadPanelVisible,
@@ -61,6 +85,7 @@ RealtorApp.Home = function (params) {
         errorVisible: ko.computed(function() {
             return errorMessage().length != 0;
         }),
+        randomMovies:randomMovies,
         hideError: function() {
             errorMessage("");
         },

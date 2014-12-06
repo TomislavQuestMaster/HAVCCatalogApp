@@ -192,6 +192,9 @@
     <Content Include="data\Homes\9b.jpg">
       <SubType>Content</SubType>
     </Content>
+    <Content Include="data\movieImages.js">
+      <SubType>Content</SubType>
+    </Content>
     <Content Include="data\Persons\1.png">
       <SubType>Content</SubType>
     </Content>

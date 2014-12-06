@@ -10,7 +10,9 @@
         listData = ko.observableArray([]),
         isLoaded = ko.observable(false),
         mapMarkers = ko.observableArray([]),
-        activeItem = ko.observable(ITEM_GALLERY);
+        activeItem = ko.observable(ITEM_GALLERY),
+        listCount = ko.observable(0),
+        selectedItemIndex = ko.observable(0);
       
     function initializeResult() {
         return function (result) {
@@ -55,7 +57,11 @@
             map: function (item) {
                 return new RealtorApp.vwAV_DjeloViewModel(item);
             },
-            filter:createFilter(params.id)
+            filter: createFilter(params.id)
+        });
+
+        list.changed.add(function () {
+            listCount(list.items().length);
         });
 
        return list;
@@ -74,8 +80,8 @@
             result.push(["HrvatskiNaslov", "contains", item]);
             result.push("or");
             result.push(["IzvorniNaslov", "contains", item]);
-            result.push("or");
-            result.push(["Redatelj", "contains", item]);
+          //  result.push("or");
+           // result.push(["Redatelj", "contains", item]);
             if (i != words.length - 1) {
                 result.push("or");
             }
@@ -95,8 +101,14 @@
         iconList: getComputedIcon(ITEM_LIST),
         mapMarkers: mapMarkers,
         iconGallery: getComputedIcon(ITEM_GALLERY),
+        listCount : listCount,
+        selectedItemIndex:selectedItemIndex,
+        selectedItem: ko.computed(function() {
+            return selectedItemIndex + 1;
+        }, this),
 
-        resultsItemClick: function(item) {
+        resultsItemClick: function (item) {
+            console.log(getList().totalCount());
             RealtorApp.app.navigate("Details/" + item);
         },
      
