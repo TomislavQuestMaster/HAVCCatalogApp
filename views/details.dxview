@@ -1,4 +1,7 @@
 <div data-options="dxView : { name: 'Details'} ">
+
+    <div data-bind="dxCommand: { id: 'back', type:'back', action: '#_back' }"></div>
+
     <div class="details" data-options="dxContent : { targetPlaceholder: 'content' }">
         <div data-bind="dxLoadPanel: { message: loadPanelMessage, visible: loadPanelVisible }"></div>
         <div data-bind="if: isLoaded">
@@ -63,41 +66,6 @@
                     <p> <span class="peoples-key"> Potpora //Support  </span> <p data-bind="foreach:Potpora"> <span class="peoples-value" data-bind="text: Ime"></span> </p> </p>
                 </div>
             </div>
-            <!-- ko with: homeItem -->
-           <!-- <div class="right">
-            </div>
-            <div class="left">
-                <div class="left-visible">
-                    <div class="tablet-scrollable">
-                        <div class="tablet-price">
-                            <div data-bind="template: { name: 'price-template' }" data-options="dxTemplate:{ name:'item' }"></div>
-                        </div>
-                        <table class="prop">
-                            <tr><td class="prop-key">Status</td><td class="prop-value"><span data-bind="text: $parent.status"></span></td></tr>
-                            <tr><td class="prop-key">Beds</td><td class="prop-value"><span data-bind="text: Beds"></span> Beds</td></tr>
-                            <tr><td class="prop-key">Baths</td><td class="prop-value"><span data-bind="text: Baths"></span> Bath</td></tr>
-                            <tr><td class="prop-key">House Size</td><td class="prop-value"><span data-bind="text: HouseSize"></span> Sq Ft</td></tr>
-                            <tr><td class="prop-key">Lot Size</td><td class="prop-value"><span data-bind="text: LotSize"></span> Sq Ft Lot</td></tr>
-                        </table>
-                        <div class="description" data-bind="text: Features"></div>
-                        <div class="agent-info" data-bind="with: Agent">
-                            <div class="agent-photo">
-                                <img data-bind="attr: { src: Photo }" />
-                            </div>
-                            <div class="agent-contact">
-                                <span class="stat">Listing agent</span><br />
-                                <span class="name" data-bind="text: Name"></span><br />
-                                <span class="phone">Tel: </span><span class="phone" data-bind="text: Phone"></span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="gradient"></div>
-                </div>
-                <div class="fav-button-container">
-                    <div class="fav-button" data-bind="dxButton: { text: IsFavorite() ? 'Remove from Favorites' : 'Add to Favorites', clickAction: changeFavState }"></div>
-                </div>
-            </div>-->
-            <!-- /ko -->
         </div>
     </div>
 </div>

@@ -1,4 +1,5 @@
 <div data-options="dxView : { name: 'Results' } " >
+    <div data-bind="dxCommand: { id: 'back', title: 'Categories', location: 'back', type: 'back', action: '#_back' }" ></div>         
     <div data-bind="dxCommand: { title: '', id: 'list', icon: iconList, action: goToList }"></div>
     <div data-bind="dxCommand: { title: '', id: 'gallery', icon: iconGallery, action: goToGallery }"></div>
     <div data-options="dxContent : { targetPlaceholder: 'content' } " data-bind="css: activeItem">
