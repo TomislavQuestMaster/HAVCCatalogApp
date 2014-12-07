@@ -3,14 +3,14 @@
         <div class="gallery-item" data-options="dxTemplate: { name: 'item' }">
             <div class="gallery-container">
                 <p class="gallery-text"><span data-bind="text: $parent.selectedItemIndex"></span> of <span data-bind="text: $parent.listCount"></span> found films</p>
-                <div data-bind="dxAction: $parent.resultsItemClick, style: { backgroundImage: 'url(' + Images()[0] + ')' }" class="image-container">
+                <div data-bind="dxAction: $parent.resultsItemClick, style: { backgroundImage: Images()[0] }" class="image-container">
                     <div class="fav">
-                        <div class="fav-img" data-bind=" css: { 'selected': true }"></div>
+                        <div class="fav-img" data-bind="dxAction: $parent.changeFavState, css: { 'selected': true }"></div>
                     </div>
                 </div>
                 <div class="description">
                     <div class="price"><span data-bind="text: IzvorniNaslov"></span></div>
-                    <div class="place">
+                    <div class="place" data-bind="style: { display:$parent.alternateNamesAreVisible }">
                         <span data-bind="text: HrvatskiNaslov"></span>,
                         <span data-bind="text: StraniNaslov"></span>,
                     </div>
@@ -18,7 +18,7 @@
                     <div class="place">
                         <span style="color: #3cbc8a">HR | Škotska | 150min </span>
                     </div>
-                    <div class="place">
+                    <div class="place" data-bind="style: { display:$parent.redateljIsVisible }">
                         <span data-bind="text: Redatelj"></span>
                     </div>
                     <div class="place" style="padding-top:0.5em;">
@@ -32,4 +32,5 @@
             </div>
         </div>
     </div>
+  
 </div>

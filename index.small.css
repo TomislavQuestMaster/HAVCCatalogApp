@@ -114,11 +114,19 @@
 .home .picture-item {
     width: 50%;
     height: 40%;
+
+    background-size: contain;
+    background-repeat: no-repeat;
+     background-color:black;
 }
 
 .home .picture-item.double {
     width: 100%;
     height: 60%;
+
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-color:black;
 }
 
 .home .price {
@@ -218,6 +226,7 @@
 .results .gallery .image-container {
     height: 65%;
 }
+
 
 .results .gallery .gallery-text {
     color: #9a9ba1;
@@ -384,7 +393,7 @@
     border: 0;
     margin-bottom: 5px;
     font-size: 18px;
-     margin-left:8pt;
+    
 }
 
 .details .peoples-key { 

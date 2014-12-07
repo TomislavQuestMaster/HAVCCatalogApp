@@ -41,7 +41,8 @@
             };
         },
 
-        fromJS: function(data) {
+        fromJS: function (data) {
+            var self = this;
             if(data) {
                 this.OID(data.OID);
                 this.IzvorniNaslov(data.IzvorniNaslov);
@@ -49,8 +50,7 @@
                 this.HrvatskiNaslov(data.HrvatskiNaslov);
                 this.ImageSource("data/Homes/1a.jpg");
                 var random = Math.floor(Math.random() * (RealtorApp.data.movieImages.length));
-                this.Images(RealtorApp.data.movieImages[random]);
-               //this.Images(["data/Homes/1a.jpg", "data/Homes/1b.jpg"]);
+                this.Images.push( 'url(' + (RealtorApp.data.movieImages[random])[0]+')');
                 this.Test("lalalala");
                 this.Trajanje(150);
                 this.Redatelj("Sanja Marjanovic");

@@ -12,7 +12,8 @@
         mapMarkers = ko.observableArray([]),
         activeItem = ko.observable(ITEM_GALLERY),
         listCount = ko.observable(0),
-        selectedItemIndex = ko.observable(0);
+        selectedItemIndex = ko.observable(0),
+        alternateNamesAreVisible = ko.observable();
       
     function initializeResult() {
         return function (result) {
@@ -25,6 +26,7 @@
 
     function loadData() {
         loadPanelVisible(true);
+        alternateNamesAreVisible(areAlternateNamesVisible());
         loadPanelMessage('Please wait... Loading data');
         if (params.type === 'searchstring') {
             if (!isPhone) customTitle(params.id);
@@ -50,6 +52,20 @@
         });
     }
    
+    function areAlternateNamesVisible()
+    {
+        if( $(window).height() > 480 )
+            return "block";
+        else
+            return "none";
+    }
+    function isRedateljVisible() {
+        if ($(window).height() > 600)
+            return "block";
+        else
+            return "none";
+    }
+
     function getList()
     {
         var list = new DevExpress.data.DataSource({
@@ -101,17 +117,23 @@
         iconList: getComputedIcon(ITEM_LIST),
         mapMarkers: mapMarkers,
         iconGallery: getComputedIcon(ITEM_GALLERY),
-        listCount : listCount,
+        listCount: listCount,
+        alternateNamesAreVisible: areAlternateNamesVisible(),
+        redateljIsVisible:isRedateljVisible(),
         selectedItemIndex:selectedItemIndex,
         selectedItem: ko.computed(function() {
             return selectedItemIndex + 1;
         }, this),
 
         resultsItemClick: function (item) {
-            console.log(getList().totalCount());
-            RealtorApp.app.navigate("Details/" + item);
+            RealtorApp.app.navigate({ view: "Details", id: item.model.OID() });
         },
      
+        changeFavState:function( item )
+        {
+            console.log( item.model );
+        },
+
         goToList: function () {
             viewModel.activeItem(ITEM_LIST);
         },

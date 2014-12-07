@@ -55,7 +55,6 @@ RealtorApp.Home = function (params) {
     }
     
     function getList() {
-        console.log("tu sam lal :(");
         var list = new DevExpress.data.DataSource({
             store: RealtorApp.db.vwAV_Djelo,
             map: function (item) {
@@ -71,22 +70,17 @@ RealtorApp.Home = function (params) {
             var random4 = Math.floor(Math.random() * (list.items().length));
             var random5 = Math.floor(Math.random() * (list.items().length));
             var rm = [list.items()[random1], list.items()[random2], list.items()[random3], list.items()[random4], list.items()[random5]];
-           
-            console.log("length:" + rm.length)
 
             $.each(rm, function (index, item) {
-                console.log("pusham");
+             
                 listData.push({
-                    image: "url(" + item.Images()[0] + ")",
+                    image: item.Images()[0],
                     price: Globalize.format(item.IzvorniNaslov, "c0"),
                     priceCss: "price" + index,
                     doubleCss: index ? "item" + index : "double",
                     ID: item.ID
                 });
             });
-
-            console.log("na kraju fora sam");
-            console.log(listData());
             loadPanelVisible(false);
             
         });
