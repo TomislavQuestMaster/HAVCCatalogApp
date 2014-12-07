@@ -29,6 +29,11 @@
     position: absolute;
 }
 
+.navbar-layout .footer-arrow {
+    width: 100%;
+    position: absolute;
+}
+
 /* ios */
 
 .dx-theme-ios .navbar-layout .layout-header {
@@ -273,6 +278,11 @@
 
 .dx-theme-generic .navbar-layout.has-navbar .layout-content {
     bottom: 68px;
+}
+
+.dx-theme-generic .navbar-layout .footer-arrow {
+    bottom: 68px;
+    height: 20px;
 }
 
 .dx-theme-generic .navbar-layout .layout-footer {

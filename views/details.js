@@ -57,8 +57,32 @@
             title(result.Address);
             isLoaded(true);
             loadPanelVisible(false);
-            updateMap();
+            //updateMap();
+            setupScroll();
         });
+    }
+
+    
+    function setupScroll() {
+
+        var scrollElement = $(".dx-active-view .tablet-scrollable");
+        if (isPhone) {
+            scrollElement = $(".dx-active-view .details");
+        }
+        scrollElement.dxScrollView(
+            {
+                scrollAction: onScroll
+        });
+
+        scrollElement.data("dxScrollView").scrollTo(0);
+    }
+
+    function onScroll(scrollEvent) {
+        if (scrollEvent.reachedBottom) {
+            $(".footer-arrow").hide();
+        } else {
+            $(".footer-arrow").show();
+        }
     }
 
     function getAVDjeloById(oid) {
@@ -119,6 +143,7 @@
        
         tmpData: tmpDetails,
         viewShowing: function () {
+            $(".footer-arrow").show();
             loadData(Number(params.id));
         },
         backText: backText

@@ -398,6 +398,9 @@
     <Content Include="templates.html">
       <SubType>Content</SubType>
     </Content>
+    <Content Include="views\about.js">
+      <SubType>Content</SubType>
+    </Content>
     <Content Include="views\home.js">
       <SubType>Content</SubType>
     </Content>

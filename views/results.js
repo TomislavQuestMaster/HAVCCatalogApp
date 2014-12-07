@@ -142,6 +142,7 @@
         },
     
         viewShowing: function (args) {
+            $(".footer-arrow").hide();
             if (!args.viewInfo.renderResult) {
                 loadData();
             }        

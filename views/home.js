@@ -128,6 +128,8 @@ RealtorApp.Home = function (params) {
             }, 5000);
         },
         viewShowing: function (args) {
+            $(".footer-arrow").hide();
+
             if (args.viewInfo.renderResult)
                 isSearchActive(false);
             else
