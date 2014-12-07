@@ -305,6 +305,13 @@ body {
     font-size:14px;
 }
 
+.details-footer {
+    width: 100%;
+    position: absolute;
+    /* bottom: 0; */
+    display: block;
+}
+
 .description-details {
     border-left: 8px solid #3cbc8a;
     width:85%;

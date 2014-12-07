@@ -54,9 +54,34 @@
             title(result.Address);
             isLoaded(true);
             loadPanelVisible(false);
-            updateMap();
+            //updateMap();
+            setupScroll();
         });
     }
+
+    
+    function setupScroll() {
+
+        var scrollElement = $(".dx-active-view .tablet-scrollable");
+        if (isPhone) {
+            scrollElement = $(".dx-active-view .details");
+        }
+        scrollElement.dxScrollView(
+            {
+                scrollAction: onScroll
+            });
+
+        scrollElement.data("dxScrollView").scrollTo(0);
+    }
+
+    function onScroll(scrollEvent) {
+        if (scrollEvent.reachedBottom) {
+            $(".footer-arrow").hide();
+        } else {
+            $(".footer-arrow").show();
+        }
+    }
+
 
     function updateMap() {
         var mapHeight = "100%",
@@ -118,6 +143,7 @@
             Potpora: [{ Ime: "" }],
         }),
         viewShowing: function () {
+            $(".footer-arrow").show();
             loadData("1");
         },
         backText: backText

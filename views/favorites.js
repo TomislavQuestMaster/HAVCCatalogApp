@@ -4,6 +4,9 @@
         noDataText: 'You have not added any properties to your favorites yet',
         favoritesItemClick: function (item) {
             RealtorApp.app.navigate("Details/" + item.model.ID);
+        },
+        viewShowing: function () {
+            $(".footer-arrow").hide();
         }
     };
 
