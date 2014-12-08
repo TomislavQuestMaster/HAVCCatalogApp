@@ -87,7 +87,7 @@
 
     function getAVDjeloById(oid) {
         var list = new DevExpress.data.DataSource({
-            store: RealtorApp.db.vwAV_Djelo,
+            store: RealtorApp.db.AVDjelo,
             map: function (item) {
                 return new RealtorApp.vwAV_DjeloViewModel(item);
             },
@@ -140,32 +140,7 @@
         title: title,
         status: status,
         favButtonText: ko.observable(null),
-<<<<<<< HEAD
-        tmpData: ko.observable({
-            OriginalniNaslov: "Originalni naslov",
-            HrvatskiNaslov: "Hrvatski naslov",
-            EngleskiNaslov: "Engleski naslov",
-            Redatelj: "Sanja Marijanovic",
-            Images: ["data/Homes/1a.jpg", "data/Homes/1b.jpg"],
-            OpisHrvatski: "Neka se prijateljstva održe, neka putem gubimo, no svako prijateljstvo ostavlja snažan utisak i igra važnu ulogu u tome tko smo danas. Koristeći arhivske snimke koje su same protagonistice snimile pred deset godina, kao tinejdžerke, BFF govori o prijateljstvu i odrastanju četiri mlade Riječanke...",
-            OpisStrani: "BFF is a film about friendship and growing up. Following a story of four girls over the course of 10 years, we question what it is that makes us have friends? What is the cost of growing up and changing?",
-            Scenarij: [{ Ime: "Sanja Marjanović" }, { Ime: "Sanja Marjanović" }],
-            Producent: [{ Ime: "Sanja Marjanović" }, { Ime: "Sanja Marjanović" }],
-            Fotografija: [{ Ime: "Sanja Marjanović" }, { Ime: "Sanja Marjanović" }],
-            Montaza: [{ Ime: "Sanja Marjanović" }, { Ime: "Sanja Marjanović" }],
-            Zvuk: [{ Ime: "Sanja Marjanović" }, { Ime: "Sanja Marjanović" }],
-            Glazba: [{ Ime: "Sanja Marjanović" }, { Ime: "Sanja Marjanović" }],
-            Kostimografijs: [{ Ime: "Sanja Marjanović" }, { Ime: "Sanja Marjanović" }],
-            Glumci: [{ Ime: "Sanja Marjanović" }, { Ime: "Sanja Marjanović" }],
-            Festivali: [{ Festival: "Liburnia Film Festival - Glavni program" }, { Festival: "Vox Feminae Festival - Teen" }],
-            ProdukcijskaKuca: [{ Ime: "Udruga filmaktiv" }],
-            Koproducenti: [{ Ime: "Udruga Filmaktiv" }],
-            Potpora: [{ Ime: "" }],
-        }),
-=======
-       
         tmpData: tmpDetails,
->>>>>>> 592e62c4b779cdf3a6c1ea78150a83f33913f915
         viewShowing: function () {
             
             $(".footer-arrow").show();

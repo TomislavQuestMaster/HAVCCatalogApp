@@ -74,14 +74,9 @@ RealtorApp.Home = function (params) {
             $.each(rm, function (index, item) {
              
                 listData.push({
-<<<<<<< HEAD
-                    image: "url(" + item.Images()[0] + ")",
-                    price: Globalize.format(item.OriginalniNaslov, "c0"),
-=======
                     OID:item.OID(),
                     image: item.Images()[0],
-                    price: Globalize.format(item.IzvorniNaslov, "c0"),
->>>>>>> 592e62c4b779cdf3a6c1ea78150a83f33913f915
+                    price: Globalize.format(item.OriginalniNaslov, "c0"),
                     priceCss: "price" + index,
                     doubleCss: index ? "item" + index : "double",
                     ID: item.ID

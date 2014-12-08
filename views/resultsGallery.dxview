@@ -9,13 +9,10 @@
                     </div>
                 </div>
                 <div class="description">
-<<<<<<< HEAD
+
                     <div class="price"><span data-bind="text: OriginalniNaslov"></span></div>
-                    <div class="place">
-=======
-                    <div class="price"><span data-bind="text: IzvorniNaslov"></span></div>
                     <div class="place" data-bind="style: { display:$parent.alternateNamesAreVisible }">
->>>>>>> 592e62c4b779cdf3a6c1ea78150a83f33913f915
+
                         <span data-bind="text: HrvatskiNaslov"></span>,
                         <span data-bind="text: EngleskiNaslov"></span>,
                     </div>
