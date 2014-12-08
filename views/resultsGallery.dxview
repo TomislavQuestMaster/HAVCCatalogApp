@@ -9,10 +9,10 @@
                     </div>
                 </div>
                 <div class="description">
-                    <div class="price"><span data-bind="text: IzvorniNaslov"></span></div>
+                    <div class="price"><span data-bind="text: OriginalniNaslov"></span></div>
                     <div class="place">
                         <span data-bind="text: HrvatskiNaslov"></span>,
-                        <span data-bind="text: StraniNaslov"></span>,
+                        <span data-bind="text: EngleskiNaslov"></span>,
                     </div>
 
                     <div class="place">

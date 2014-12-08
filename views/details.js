@@ -122,9 +122,9 @@
         status: status,
         favButtonText: ko.observable(null),
         tmpData: ko.observable({
-            IzvorniNaslov: "Izvorni naslov",
+            OriginalniNaslov: "Originalni naslov",
             HrvatskiNaslov: "Hrvatski naslov",
-            StraniNaslov: "Strani naslov",
+            EngleskiNaslov: "Engleski naslov",
             Redatelj: "Sanja Marijanovic",
             Images: ["data/Homes/1a.jpg", "data/Homes/1b.jpg"],
             OpisHrvatski: "Neka se prijateljstva održe, neka putem gubimo, no svako prijateljstvo ostavlja snažan utisak i igra važnu ulogu u tome tko smo danas. Koristeći arhivske snimke koje su same protagonistice snimile pred deset godina, kao tinejdžerke, BFF govori o prijateljstvu i odrastanju četiri mlade Riječanke...",

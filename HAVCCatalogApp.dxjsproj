@@ -311,6 +311,9 @@
     <Content Include="images\globe.png">
       <SubType>Content</SubType>
     </Content>
+    <Content Include="images\horizontalBar.png">
+      <SubType>Content</SubType>
+    </Content>
     <Content Include="images\image-active.png">
       <SubType>Content</SubType>
     </Content>

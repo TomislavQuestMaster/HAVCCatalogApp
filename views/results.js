@@ -53,7 +53,7 @@
     function getList()
     {
         var list = new DevExpress.data.DataSource({
-            store: RealtorApp.db.vwAV_Djelo,
+            store: RealtorApp.db.AVDjelo,
             map: function (item) {
                 return new RealtorApp.vwAV_DjeloViewModel(item);
             },
@@ -79,9 +79,9 @@
             var item = words[i];
             result.push(["HrvatskiNaslov", "contains", item]);
             result.push("or");
-            result.push(["IzvorniNaslov", "contains", item]);
-          //  result.push("or");
-           // result.push(["Redatelj", "contains", item]);
+            result.push(["OriginalniNaslov", "contains", item]);
+            //result.push("or");
+            //result.push(["Redatelj", "contains", item]);
             if (i != words.length - 1) {
                 result.push("or");
             }

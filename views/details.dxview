@@ -7,10 +7,10 @@
         <div data-bind="if: isLoaded">
            
             <div class="details-header" data-bind="with: tmpData " style="width:100%">
-                <h2 data-bind="text: IzvorniNaslov" ></h2>
+                <h2 data-bind="text: OriginalniNaslov" ></h2>
                 <p> 
                     <span data-bind="text: HrvatskiNaslov" ></span> 
-                    <span data-bind="text: StraniNaslov"></span> 
+                    <span data-bind="text: EngleskiNaslov"></span> 
                 </p>
                 <p>
                     <span style="color: #3cbc8a">HR | Škotska | 150min </span>

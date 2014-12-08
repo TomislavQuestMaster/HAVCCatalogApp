@@ -1,0 +1,319 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="HAVCKatalogModel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityContainer Name="HAVCKatalogModelStoreContainer">
+          <EntitySet Name="AVDjelo" EntityType="HAVCKatalogModel.Store.AVDjelo" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Materijali" EntityType="HAVCKatalogModel.Store.Materijali" store:Type="Tables" Schema="dbo" />
+          <AssociationSet Name="FK_Materijali_AVDjelo" Association="HAVCKatalogModel.Store.FK_Materijali_AVDjelo">
+            <End Role="AVDjelo" EntitySet="AVDjelo" />
+            <End Role="Materijali" EntitySet="Materijali" />
+          </AssociationSet>
+        </EntityContainer>
+        <EntityType Name="AVDjelo">
+          <Key>
+            <PropertyRef Name="OID" />
+          </Key>
+          <Property Name="OID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="OriginalniNaslov" Type="nvarchar(max)" />
+          <Property Name="EngleskiNaslov" Type="nvarchar(max)" />
+          <Property Name="HrvatskiNaslov" Type="nvarchar(max)" />
+          <Property Name="Debitant" Type="bit" />
+          <Property Name="GodinaProizvodnje" Type="nvarchar" MaxLength="100" />
+          <Property Name="FilmskeVrste" Type="nvarchar(max)" />
+          <Property Name="Zanrovi" Type="nvarchar(max)" />
+          <Property Name="Porijeklo" Type="nvarchar(max)" />
+          <Property Name="PorijekloSkraceno" Type="nvarchar(max)" />
+          <Property Name="DrzaveZaStatistiku" Type="nvarchar(max)" />
+          <Property Name="Jezici" Type="nvarchar(max)" />
+          <Property Name="JeziciSkraceno" Type="nvarchar(max)" />
+          <Property Name="FazaAV_Produkcije" Type="nvarchar" MaxLength="100" />
+          <Property Name="Sinopsis" Type="nvarchar(max)" />
+          <Property Name="SinopsisENG" Type="nvarchar(max)" />
+          <Property Name="SinopsisKratki" Type="nvarchar(max)" />
+          <Property Name="SinopsisKratkiENG" Type="nvarchar(max)" />
+          <Property Name="LogLine" Type="nvarchar(max)" />
+          <Property Name="LogLineENG" Type="nvarchar(max)" />
+          <Property Name="WebLinks" Type="nvarchar(max)" />
+          <Property Name="TrailerLinks" Type="nvarchar(max)" />
+          <Property Name="Trajanje" Type="nvarchar" MaxLength="100" />
+          <Property Name="UkupnaGledanost" Type="nvarchar" MaxLength="100" />
+          <Property Name="UdistribucijiOD" Type="datetime" />
+          <Property Name="DistribucijaKino" Type="bit" />
+          <Property Name="Maloprodaja" Type="bit" />
+          <Property Name="DatumZadnjePromjene" Type="datetime" />
+          <Property Name="DostupniFormati" Type="nvarchar(max)" />
+          <Property Name="LokalniDistributeri" Type="nvarchar(max)" />
+          <Property Name="GlobalniDistributeri" Type="nvarchar(max)" />
+          <Property Name="ProdajniAgenti" Type="nvarchar(max)" />
+          <Property Name="ProdukcijskeKuce" Type="nvarchar(max)" />
+          <Property Name="KoProdukcija" Type="nvarchar(max)" />
+          <Property Name="Redatelji" Type="nvarchar(max)" />
+          <Property Name="Scenaristi" Type="nvarchar(max)" />
+          <Property Name="Producenti" Type="nvarchar(max)" />
+          <Property Name="KoScenaristi" Type="nvarchar(max)" />
+          <Property Name="Kamera" Type="nvarchar(max)" />
+          <Property Name="Kostimografi" Type="nvarchar(max)" />
+          <Property Name="Glazba" Type="nvarchar(max)" />
+          <Property Name="DizajnerZvuka" Type="nvarchar(max)" />
+          <Property Name="AutorGlazbe" Type="nvarchar(max)" />
+          <Property Name="Animatori" Type="nvarchar(max)" />
+          <Property Name="DirektoriFotografije" Type="nvarchar(max)" />
+          <Property Name="Scenografi" Type="nvarchar(max)" />
+          <Property Name="Montazeri" Type="nvarchar(max)" />
+          <Property Name="Uloge" Type="nvarchar(max)" />
+          <Property Name="KompozitingArtist" Type="nvarchar(max)" />
+          <Property Name="DizajnLikova" Type="nvarchar(max)" />
+          <Property Name="isFilmskaVrstaAnimirani" Type="bit" />
+          <Property Name="SourceOID" Type="int" />
+          <Property Name="OptimisticLockField" Type="int" />
+          <Property Name="GCRecord" Type="int" />
+        </EntityType>
+        <EntityType Name="Materijali">
+          <Key>
+            <PropertyRef Name="OID" />
+          </Key>
+          <Property Name="OID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="SourceOID" Type="int" />
+          <Property Name="AVDjelo" Type="int" />
+          <Property Name="Naziv" Type="nvarchar(max)" />
+          <Property Name="Size" Type="int" />
+          <Property Name="Tumbernail" Type="bit" />
+          <Property Name="Opis" Type="nvarchar(max)" />
+          <Property Name="Tip" Type="nvarchar" MaxLength="100" />
+          <Property Name="IsSelected" Type="bit" />
+          <Property Name="HtmlExport" Type="bit" />
+          <Property Name="FileContents" Type="varbinary(max)" />
+          <Property Name="FS_RowGuid" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="OptimisticLockField" Type="int" />
+          <Property Name="GCRecord" Type="int" />
+        </EntityType>
+        <Association Name="FK_Materijali_AVDjelo">
+          <End Role="AVDjelo" Type="HAVCKatalogModel.Store.AVDjelo" Multiplicity="0..1" />
+          <End Role="Materijali" Type="HAVCKatalogModel.Store.Materijali" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="AVDjelo">
+              <PropertyRef Name="OID" />
+            </Principal>
+            <Dependent Role="Materijali">
+              <PropertyRef Name="AVDjelo" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="HAVCKatalogModel" Alias="Self" p1:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:p1="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityContainer Name="HAVCKatalogEntities" p1:LazyLoadingEnabled="true">
+          <EntitySet Name="AVDjelo" EntityType="HAVCKatalogModel.AVDjelo" />
+          <EntitySet Name="Materijali" EntityType="HAVCKatalogModel.Materijali" />
+          <AssociationSet Name="FK_Materijali_AVDjelo" Association="HAVCKatalogModel.FK_Materijali_AVDjelo">
+            <End Role="AVDjelo" EntitySet="AVDjelo" />
+            <End Role="Materijali" EntitySet="Materijali" />
+          </AssociationSet>
+        </EntityContainer>
+        <EntityType Name="AVDjelo">
+          <Key>
+            <PropertyRef Name="OID" />
+          </Key>
+          <Property Name="OID" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+          <Property Name="OriginalniNaslov" Type="String" MaxLength="Max" Unicode="true" FixedLength="false" />
+          <Property Name="EngleskiNaslov" Type="String" MaxLength="Max" Unicode="true" FixedLength="false" />
+          <Property Name="HrvatskiNaslov" Type="String" MaxLength="Max" Unicode="true" FixedLength="false" />
+          <Property Name="Debitant" Type="Boolean" />
+          <Property Name="GodinaProizvodnje" Type="String" MaxLength="100" Unicode="true" FixedLength="false" />
+          <Property Name="FilmskeVrste" Type="String" MaxLength="Max" Unicode="true" FixedLength="false" />
+          <Property Name="Zanrovi" Type="String" MaxLength="Max" Unicode="true" FixedLength="false" />
+          <Property Name="Porijeklo" Type="String" MaxLength="Max" Unicode="true" FixedLength="false" />
+          <Property Name="PorijekloSkraceno" Type="String" MaxLength="Max" Unicode="true" FixedLength="false" />
+          <Property Name="DrzaveZaStatistiku" Type="String" MaxLength="Max" Unicode="true" FixedLength="false" />
+          <Property Name="Jezici" Type="String" MaxLength="Max" Unicode="true" FixedLength="false" />
+          <Property Name="JeziciSkraceno" Type="String" MaxLength="Max" Unicode="true" FixedLength="false" />
+          <Property Name="FazaAV_Produkcije" Type="String" MaxLength="100" Unicode="true" FixedLength="false" />
+          <Property Name="Sinopsis" Type="String" MaxLength="Max" Unicode="true" FixedLength="false" />
+          <Property Name="SinopsisENG" Type="String" MaxLength="Max" Unicode="true" FixedLength="false" />
+          <Property Name="SinopsisKratki" Type="String" MaxLength="Max" Unicode="true" FixedLength="false" />
+          <Property Name="SinopsisKratkiENG" Type="String" MaxLength="Max" Unicode="true" FixedLength="false" />
+          <Property Name="LogLine" Type="String" MaxLength="Max" Unicode="true" FixedLength="false" />
+          <Property Name="LogLineENG" Type="String" MaxLength="Max" Unicode="true" FixedLength="false" />
+          <Property Name="WebLinks" Type="String" MaxLength="Max" Unicode="true" FixedLength="false" />
+          <Property Name="TrailerLinks" Type="String" MaxLength="Max" Unicode="true" FixedLength="false" />
+          <Property Name="Trajanje" Type="String" MaxLength="100" Unicode="true" FixedLength="false" />
+          <Property Name="UkupnaGledanost" Type="String" MaxLength="100" Unicode="true" FixedLength="false" />
+          <Property Name="UdistribucijiOD" Type="DateTime" Precision="3" />
+          <Property Name="DistribucijaKino" Type="Boolean" />
+          <Property Name="Maloprodaja" Type="Boolean" />
+          <Property Name="DatumZadnjePromjene" Type="DateTime" Precision="3" />
+          <Property Name="DostupniFormati" Type="String" MaxLength="Max" Unicode="true" FixedLength="false" />
+          <Property Name="LokalniDistributeri" Type="String" MaxLength="Max" Unicode="true" FixedLength="false" />
+          <Property Name="GlobalniDistributeri" Type="String" MaxLength="Max" Unicode="true" FixedLength="false" />
+          <Property Name="ProdajniAgenti" Type="String" MaxLength="Max" Unicode="true" FixedLength="false" />
+          <Property Name="ProdukcijskeKuce" Type="String" MaxLength="Max" Unicode="true" FixedLength="false" />
+          <Property Name="KoProdukcija" Type="String" MaxLength="Max" Unicode="true" FixedLength="false" />
+          <Property Name="Redatelji" Type="String" MaxLength="Max" Unicode="true" FixedLength="false" />
+          <Property Name="Scenaristi" Type="String" MaxLength="Max" Unicode="true" FixedLength="false" />
+          <Property Name="Producenti" Type="String" MaxLength="Max" Unicode="true" FixedLength="false" />
+          <Property Name="KoScenaristi" Type="String" MaxLength="Max" Unicode="true" FixedLength="false" />
+          <Property Name="Kamera" Type="String" MaxLength="Max" Unicode="true" FixedLength="false" />
+          <Property Name="Kostimografi" Type="String" MaxLength="Max" Unicode="true" FixedLength="false" />
+          <Property Name="Glazba" Type="String" MaxLength="Max" Unicode="true" FixedLength="false" />
+          <Property Name="DizajnerZvuka" Type="String" MaxLength="Max" Unicode="true" FixedLength="false" />
+          <Property Name="AutorGlazbe" Type="String" MaxLength="Max" Unicode="true" FixedLength="false" />
+          <Property Name="Animatori" Type="String" MaxLength="Max" Unicode="true" FixedLength="false" />
+          <Property Name="DirektoriFotografije" Type="String" MaxLength="Max" Unicode="true" FixedLength="false" />
+          <Property Name="Scenografi" Type="String" MaxLength="Max" Unicode="true" FixedLength="false" />
+          <Property Name="Montazeri" Type="String" MaxLength="Max" Unicode="true" FixedLength="false" />
+          <Property Name="Uloge" Type="String" MaxLength="Max" Unicode="true" FixedLength="false" />
+          <Property Name="KompozitingArtist" Type="String" MaxLength="Max" Unicode="true" FixedLength="false" />
+          <Property Name="DizajnLikova" Type="String" MaxLength="Max" Unicode="true" FixedLength="false" />
+          <Property Name="isFilmskaVrstaAnimirani" Type="Boolean" />
+          <Property Name="SourceOID" Type="Int32" />
+          <Property Name="OptimisticLockField" Type="Int32" />
+          <Property Name="GCRecord" Type="Int32" />
+          <NavigationProperty Name="Materijali" Relationship="HAVCKatalogModel.FK_Materijali_AVDjelo" FromRole="AVDjelo" ToRole="Materijali" />
+        </EntityType>
+        <EntityType Name="Materijali">
+          <Key>
+            <PropertyRef Name="OID" />
+          </Key>
+          <Property Name="OID" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+          <Property Name="SourceOID" Type="Int32" />
+          <Property Name="AVDjelo" Type="Int32" />
+          <Property Name="Naziv" Type="String" MaxLength="Max" Unicode="true" FixedLength="false" />
+          <Property Name="Size" Type="Int32" />
+          <Property Name="Tumbernail" Type="Boolean" />
+          <Property Name="Opis" Type="String" MaxLength="Max" Unicode="true" FixedLength="false" />
+          <Property Name="Tip" Type="String" MaxLength="100" Unicode="true" FixedLength="false" />
+          <Property Name="IsSelected" Type="Boolean" />
+          <Property Name="HtmlExport" Type="Boolean" />
+          <Property Name="FileContents" Type="Binary" MaxLength="Max" FixedLength="false" />
+          <Property Name="FS_RowGuid" Type="Guid" Nullable="false" />
+          <Property Name="OptimisticLockField" Type="Int32" />
+          <Property Name="GCRecord" Type="Int32" />
+          <NavigationProperty Name="AVDjelo1" Relationship="HAVCKatalogModel.FK_Materijali_AVDjelo" FromRole="Materijali" ToRole="AVDjelo" />
+        </EntityType>
+        <Association Name="FK_Materijali_AVDjelo">
+          <End Role="AVDjelo" Type="HAVCKatalogModel.AVDjelo" Multiplicity="0..1" />
+          <End Role="Materijali" Type="HAVCKatalogModel.Materijali" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="AVDjelo">
+              <PropertyRef Name="OID" />
+            </Principal>
+            <Dependent Role="Materijali">
+              <PropertyRef Name="AVDjelo" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="HAVCKatalogModelStoreContainer" CdmEntityContainer="HAVCKatalogEntities">
+          <EntitySetMapping Name="AVDjelo">
+            <EntityTypeMapping TypeName="HAVCKatalogModel.AVDjelo">
+              <MappingFragment StoreEntitySet="AVDjelo">
+                <ScalarProperty Name="OID" ColumnName="OID" />
+                <ScalarProperty Name="OriginalniNaslov" ColumnName="OriginalniNaslov" />
+                <ScalarProperty Name="EngleskiNaslov" ColumnName="EngleskiNaslov" />
+                <ScalarProperty Name="HrvatskiNaslov" ColumnName="HrvatskiNaslov" />
+                <ScalarProperty Name="Debitant" ColumnName="Debitant" />
+                <ScalarProperty Name="GodinaProizvodnje" ColumnName="GodinaProizvodnje" />
+                <ScalarProperty Name="FilmskeVrste" ColumnName="FilmskeVrste" />
+                <ScalarProperty Name="Zanrovi" ColumnName="Zanrovi" />
+                <ScalarProperty Name="Porijeklo" ColumnName="Porijeklo" />
+                <ScalarProperty Name="PorijekloSkraceno" ColumnName="PorijekloSkraceno" />
+                <ScalarProperty Name="DrzaveZaStatistiku" ColumnName="DrzaveZaStatistiku" />
+                <ScalarProperty Name="Jezici" ColumnName="Jezici" />
+                <ScalarProperty Name="JeziciSkraceno" ColumnName="JeziciSkraceno" />
+                <ScalarProperty Name="FazaAV_Produkcije" ColumnName="FazaAV_Produkcije" />
+                <ScalarProperty Name="Sinopsis" ColumnName="Sinopsis" />
+                <ScalarProperty Name="SinopsisENG" ColumnName="SinopsisENG" />
+                <ScalarProperty Name="SinopsisKratki" ColumnName="SinopsisKratki" />
+                <ScalarProperty Name="SinopsisKratkiENG" ColumnName="SinopsisKratkiENG" />
+                <ScalarProperty Name="LogLine" ColumnName="LogLine" />
+                <ScalarProperty Name="LogLineENG" ColumnName="LogLineENG" />
+                <ScalarProperty Name="WebLinks" ColumnName="WebLinks" />
+                <ScalarProperty Name="TrailerLinks" ColumnName="TrailerLinks" />
+                <ScalarProperty Name="Trajanje" ColumnName="Trajanje" />
+                <ScalarProperty Name="UkupnaGledanost" ColumnName="UkupnaGledanost" />
+                <ScalarProperty Name="UdistribucijiOD" ColumnName="UdistribucijiOD" />
+                <ScalarProperty Name="DistribucijaKino" ColumnName="DistribucijaKino" />
+                <ScalarProperty Name="Maloprodaja" ColumnName="Maloprodaja" />
+                <ScalarProperty Name="DatumZadnjePromjene" ColumnName="DatumZadnjePromjene" />
+                <ScalarProperty Name="DostupniFormati" ColumnName="DostupniFormati" />
+                <ScalarProperty Name="LokalniDistributeri" ColumnName="LokalniDistributeri" />
+                <ScalarProperty Name="GlobalniDistributeri" ColumnName="GlobalniDistributeri" />
+                <ScalarProperty Name="ProdajniAgenti" ColumnName="ProdajniAgenti" />
+                <ScalarProperty Name="ProdukcijskeKuce" ColumnName="ProdukcijskeKuce" />
+                <ScalarProperty Name="KoProdukcija" ColumnName="KoProdukcija" />
+                <ScalarProperty Name="Redatelji" ColumnName="Redatelji" />
+                <ScalarProperty Name="Scenaristi" ColumnName="Scenaristi" />
+                <ScalarProperty Name="Producenti" ColumnName="Producenti" />
+                <ScalarProperty Name="KoScenaristi" ColumnName="KoScenaristi" />
+                <ScalarProperty Name="Kamera" ColumnName="Kamera" />
+                <ScalarProperty Name="Kostimografi" ColumnName="Kostimografi" />
+                <ScalarProperty Name="Glazba" ColumnName="Glazba" />
+                <ScalarProperty Name="DizajnerZvuka" ColumnName="DizajnerZvuka" />
+                <ScalarProperty Name="AutorGlazbe" ColumnName="AutorGlazbe" />
+                <ScalarProperty Name="Animatori" ColumnName="Animatori" />
+                <ScalarProperty Name="DirektoriFotografije" ColumnName="DirektoriFotografije" />
+                <ScalarProperty Name="Scenografi" ColumnName="Scenografi" />
+                <ScalarProperty Name="Montazeri" ColumnName="Montazeri" />
+                <ScalarProperty Name="Uloge" ColumnName="Uloge" />
+                <ScalarProperty Name="KompozitingArtist" ColumnName="KompozitingArtist" />
+                <ScalarProperty Name="DizajnLikova" ColumnName="DizajnLikova" />
+                <ScalarProperty Name="isFilmskaVrstaAnimirani" ColumnName="isFilmskaVrstaAnimirani" />
+                <ScalarProperty Name="SourceOID" ColumnName="SourceOID" />
+                <ScalarProperty Name="OptimisticLockField" ColumnName="OptimisticLockField" />
+                <ScalarProperty Name="GCRecord" ColumnName="GCRecord" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Materijali">
+            <EntityTypeMapping TypeName="HAVCKatalogModel.Materijali">
+              <MappingFragment StoreEntitySet="Materijali">
+                <ScalarProperty Name="OID" ColumnName="OID" />
+                <ScalarProperty Name="SourceOID" ColumnName="SourceOID" />
+                <ScalarProperty Name="AVDjelo" ColumnName="AVDjelo" />
+                <ScalarProperty Name="Naziv" ColumnName="Naziv" />
+                <ScalarProperty Name="Size" ColumnName="Size" />
+                <ScalarProperty Name="Tumbernail" ColumnName="Tumbernail" />
+                <ScalarProperty Name="Opis" ColumnName="Opis" />
+                <ScalarProperty Name="Tip" ColumnName="Tip" />
+                <ScalarProperty Name="IsSelected" ColumnName="IsSelected" />
+                <ScalarProperty Name="HtmlExport" ColumnName="HtmlExport" />
+                <ScalarProperty Name="FileContents" ColumnName="FileContents" />
+                <ScalarProperty Name="FS_RowGuid" ColumnName="FS_RowGuid" />
+                <ScalarProperty Name="OptimisticLockField" ColumnName="OptimisticLockField" />
+                <ScalarProperty Name="GCRecord" ColumnName="GCRecord" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="False" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="True" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

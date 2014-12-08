@@ -33,14 +33,14 @@ window.RealtorApp = $.extend(true, window.RealtorApp, {
     ],
     "endpoints": {
         "db": {
-            "local": "http://localhost:51234/DataService.svc",
-            "production": "http://localhost:51234/DataService.svc"
+            "local": "http://localhost:21372/DataService.svc",
+            "production": "http://localhost:21372/DataService.svc"
         }
     },
     "services": {
         "db": {
             "entities": {
-                "vwAV_Djelo": {
+                "AVDjelo": {
                     "key": "OID",
                     "keyType": "Int32"
                 }

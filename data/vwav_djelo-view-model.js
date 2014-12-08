@@ -2,8 +2,8 @@
 (function() {
     RealtorApp.vwAV_DjeloViewModel = function(data) {
             this.OID = ko.observable();
-            this.IzvorniNaslov = ko.observable();
-            this.StraniNaslov = ko.observable();
+            this.OriginalniNaslov = ko.observable();
+            this.EngleskiNaslov = ko.observable();
             this.HrvatskiNaslov = ko.observable();
             this.ImageSource = ko.observable();
             this.Images = ko.observableArray([]);
@@ -34,8 +34,8 @@
         toJS: function () {
             return {
                 OID: this.OID(),
-                IzvorniNaslov: this.IzvorniNaslov(),
-                StraniNaslov: this.StraniNaslov(),
+                OriginalniNaslov: this.OriginalniNaslov(),
+                EngleskiNaslov: this.EngleskiNaslov(),
                 HrvatskiNaslov: this.HrvatskiNaslov(),
                 Zanr:this.Zanr(),
             };
@@ -44,8 +44,8 @@
         fromJS: function(data) {
             if(data) {
                 this.OID(data.OID);
-                this.IzvorniNaslov(data.IzvorniNaslov);
-                this.StraniNaslov(data.StraniNaslov);
+                this.OriginalniNaslov(data.OriginalniNaslov);
+                this.EngleskiNaslov(data.EngleskiNaslov);
                 this.HrvatskiNaslov(data.HrvatskiNaslov);
                 this.ImageSource("data/Homes/1a.jpg");
                 var random = Math.floor(Math.random() * (RealtorApp.data.movieImages.length));

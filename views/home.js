@@ -57,7 +57,7 @@ RealtorApp.Home = function (params) {
     function getList() {
         console.log("tu sam lal :(");
         var list = new DevExpress.data.DataSource({
-            store: RealtorApp.db.vwAV_Djelo,
+            store: RealtorApp.db.AVDjelo,
             map: function (item) {
                 return new RealtorApp.vwAV_DjeloViewModel(item);
             },
@@ -78,7 +78,7 @@ RealtorApp.Home = function (params) {
                 console.log("pusham");
                 listData.push({
                     image: "url(" + item.Images()[0] + ")",
-                    price: Globalize.format(item.IzvorniNaslov, "c0"),
+                    price: Globalize.format(item.OriginalniNaslov, "c0"),
                     priceCss: "price" + index,
                     doubleCss: index ? "item" + index : "double",
                     ID: item.ID
