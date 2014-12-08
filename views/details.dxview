@@ -16,14 +16,13 @@
                     <span style="color: #3cbc8a">HR | Škotska | 150min </span>
                 </p>
                
-                <p> Redatelj//Director: <span data-bind="text: HrvatskiNaslov"></span>  </p>
-                <ul class="zanr-lista">
-                    <li class="zanr-element">Drama</li>
-                    <li class="zanr-element">Triler</li>
+                <p> Redatelj//Director: <span data-bind="text: Redatelj"> </span>  </p>
+                <ul class="zanr-lista" data-bind="foreach:Zanr">
+                    <li class="zanr-element" data-bind="text:$data">Drama</li>
                 </ul>
             </div>
             <div class="images" data-bind="with: tmpData ">
-                <div data-bind="dxGallery: { dataSource: $parent.images, width: '100%', height: '100%', indicatorEnabled: false, showIndicator: false, loop: true }">
+                <div data-bind="dxGallery: { dataSource: Images, width: '100%', height: '100%', indicatorEnabled: false, showIndicator: false, loop: true }">
                     <div class="gallery-item" data-options="dxTemplate: { name: 'item' }">
                         <div class="gallery-container">
                             <div class="image-container">
@@ -35,35 +34,35 @@
             </div>
             <div class="description-details " data-bind="with: tmpData ">
                 <p>
-                    <span data-bind="text: OpisHrvatski" style="color: black"></span>
+                    <span data-bind="text: OpisHrvatski" style="color: white"></span>
                     <span data-bind="text: OpisStrani" style="color: red"></span>
                 </p>
             </div>
-            <div  data-bind="with: tmpData ">
+            <div class="festivali" data-bind="with: tmpData ">
                 <div class="peoples">
-                    <p> <span class="peoples-key"> Scenarij //Screenplay  </span> <p data-bind="foreach:Scenarij"> <span class="peoples-value" data-bind="text: Ime"></span> </p> </p>
+                    <p> <span class="peoples-key"> Scenarij //Screenplay  </span> <p data-bind="foreach:Scenarij"> <span class="peoples-value" data-bind="text: $data"></span> </p> </p>
                 </div>
                 <div class="peoples">
-                    <p> <span class="peoples-key"> Producent //Producer  </span> <p data-bind="foreach:Producent"> <span class="peoples-value" data-bind="text: Ime"></span> </p> </p>
+                    <p> <span class="peoples-key"> Producent //Producer  </span> <p data-bind="foreach:Producent"> <span class="peoples-value" data-bind="text: $data"></span> </p> </p>
                 </div>
                 <div class="peoples">
-                    <p> <span class="peoples-key"> Fotografija //Cinematography  </span> <p data-bind="foreach:Fotografija"> <span class="peoples-value" data-bind="text: Ime"></span> </p> </p>
+                    <p> <span class="peoples-key"> Fotografija //Cinematography  </span> <p data-bind="foreach:Fotografija"> <span class="peoples-value" data-bind="text: $data"></span> </p> </p>
                 </div>
             </div>
             <div class="festivali" data-bind="with: tmpData ">
                 <div class="peoples">
-                    <p> <span class="peoples-key"> Festivali//Festivals  </span> <p data-bind="foreach:Festivali"> <span class="peoples-value" data-bind="text: Festival"></span> </p> </p>
+                    <p> <span class="peoples-key"> Festivali//Festivals  </span> <p data-bind="foreach:Festivali"> <span class="peoples-value" data-bind="text: $data"></span> </p> </p>
                </div>
                 </div>
             <div class="festivali" data-bind="with: tmpData ">
                 <div class="peoples">
-                    <p> <span class="peoples-key"> Produkcijska kuca //Produced by  </span> <p data-bind="foreach:ProdukcijskaKuca"> <span class="peoples-value" data-bind="text: Ime"></span> </p> </p>
+                    <p> <span class="peoples-key"> Produkcijska kuca //Produced by  </span> <p data-bind="foreach:ProdukcijskaKuca"> <span class="peoples-value" data-bind="text: $data"></span> </p> </p>
                 </div>
                 <div class="peoples">
-                    <p> <span class="peoples-key">Koproducenti //Co-producers  </span> <p data-bind="foreach:Koproducenti"> <span class="peoples-value" data-bind="text: Ime"></span> </p> </p>
+                    <p> <span class="peoples-key">Koproducenti //Co-producers  </span> <p data-bind="foreach:Koproducenti"> <span class="peoples-value" data-bind="text: $data"></span> </p> </p>
                 </div>
                 <div class="peoples">
-                    <p> <span class="peoples-key"> Potpora //Support  </span> <p data-bind="foreach:Potpora"> <span class="peoples-value" data-bind="text: Ime"></span> </p> </p>
+                    <p> <span class="peoples-key"> Potpora //Support  </span> <p data-bind="foreach:Potpora"> <span class="peoples-value" data-bind="text: $data"></span> </p> </p>
                 </div>
             </div>
         </div>

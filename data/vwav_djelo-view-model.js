@@ -1,4 +1,4 @@
-
+ï»¿
 (function() {
     RealtorApp.vwAV_DjeloViewModel = function(data) {
             this.OID = ko.observable();
@@ -41,7 +41,8 @@
             };
         },
 
-        fromJS: function(data) {
+        fromJS: function (data) {
+            
             if(data) {
                 this.OID(data.OID);
                 this.OriginalniNaslov(data.OriginalniNaslov);
@@ -49,24 +50,24 @@
                 this.HrvatskiNaslov(data.HrvatskiNaslov);
                 this.ImageSource("data/Homes/1a.jpg");
                 var random = Math.floor(Math.random() * (RealtorApp.data.movieImages.length));
-                this.Images(RealtorApp.data.movieImages[random]);
-               //this.Images(["data/Homes/1a.jpg", "data/Homes/1b.jpg"]);
+                this.Images.push('url(' + (RealtorApp.data.movieImages[random])[0] + ')');
+              
                 this.Test("lalalala");
                 this.Trajanje(150);
-                this.Redatelj("Sanja Marjanovic");
-                this.Zanr(["Komedija", "Triler"]);
+                this.Redatelj("Sanja MarjanoviÄ‡");
+                this.Zanr(["Komedija", "Triler", "Komedija", "Triler"]);
                 this.Zanr.push("Komedija");
-                this.ZemljaPorijekla(["Hrvatska", "Škotska"]);
-                this.OpisHrvatski( "Neka se prijateljstva odre, neka putem gubimo, no svako prijateljstvo ostavlja snaan utisak i igra vanu ulogu u tome tko smo danas. Koristeæi arhivske snimke koje su same protagonistice snimile pred deset godina, kao tinejderke, BFF govori o prijateljstvu i odrastanju èetiri mlade Rijeèanke...");
+                this.ZemljaPorijekla(["Hrvatska", "Å kotska"]);
+                this.OpisHrvatski( "Neka se prijateljstva odrÅ¾e, neka putem gubimo, no svako prijateljstvo ostavlja snaÅ¾an utisak i igra vaÅ¾nu ulogu u tome tko smo danas. KoristeÄ‡i arhivske snimke koje su same protagonistice snimile pred deset godina, kao tinejdÅ¾erke, BFF govori o prijateljstvu i odrastanju Äetiri mlade RijeÄanke...");
                 this.OpisStrani("BFF is a film about friendship and growing up. Following a story of four girls over the course of 10 years, we question what it is that makes us have friends? What is the cost of growing up and changing?");
-                this.Scenarij([ "Sanja Marjanoviæ" ,  "Sanja Marjanoviæ" ]);
-                this.Producent ([ "Sanja Marjanoviæ" ,  "Sanja Marjanoviæ" ]);
-                this.Fotografija ([ "Sanja Marjanoviæ" , "Sanja Marjanoviæ"]);
-                this.Montaza (["Sanja Marjanoviæ", "Sanja Marjanoviæ" ]);
-                this.Zvuk (["Sanja Marjanoviæ", "Sanja Marjanoviæ"]);
-                this.Glazba= (["Sanja Marjanoviæ", "Sanja Marjanoviæ"]);
-                this.Kostimografijs ([ "Sanja Marjanoviæ",  "Sanja Marjanoviæ" ]);
-                this.Glumci ([ "Sanja Marjanoviæ",  "Sanja Marjanoviæ" ]);
+                this.Scenarij([ "Sanja MarjanoviÄ‡" ,  "Sanja MarjanoviÄ‡" ]);
+                this.Producent ([ "Sanja MarjanoviÄ‡" ,  "Sanja MarjanoviÄ‡" ]);
+                this.Fotografija ([ "Sanja MarjanoviÄ‡" , "Sanja MarjanoviÄ‡"]);
+                this.Montaza (["Sanja MarjanoviÄ‡", "Sanja MarjanoviÄ‡" ]);
+                this.Zvuk (["Sanja MarjanoviÄ‡", "Sanja MarjanoviÄ‡"]);
+                this.Glazba= (["Sanja MarjanoviÄ‡", "Sanja MarjanoviÄ‡"]);
+                this.Kostimografijs ([ "Sanja MarjanoviÄ‡",  "Sanja MarjanoviÄ‡" ]);
+                this.Glumci ([ "Sanja MarjanoviÄ‡",  "Sanja MarjanoviÄ‡" ]);
                 this.Festivali ([ "Liburnia Film Festival - Glavni program" , "Vox Feminae Festival - Teen" ]);
                 this.ProdukcijskaKuca ([ "Udruga filmaktiv" ]);
                 this.Koproducenti ([ "Udruga Filmaktiv"]);

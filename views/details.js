@@ -13,7 +13,8 @@
         loadPanelMessage = ko.observable(""),
         title = ko.observable(""),
         status = ko.observable(""),
-        backText = ko.observable("");
+        backText = ko.observable(""),
+        tmpDetails = ko.observable();
 
     setupBackText();
     function setupBackText() {
@@ -31,6 +32,8 @@
         isLoaded(false);
         loadPanelVisible(true);
         loadPanelMessage('Please wait... Loading data');
+
+        getAVDjeloById( id );
 
         RealtorApp.data.getPropertyInfo(id).done(function (result) {
             $.each(result.Images, function (_, image) {
@@ -69,7 +72,7 @@
         scrollElement.dxScrollView(
             {
                 scrollAction: onScroll
-            });
+        });
 
         scrollElement.data("dxScrollView").scrollTo(0);
     }
@@ -82,6 +85,22 @@
         }
     }
 
+    function getAVDjeloById(oid) {
+        var list = new DevExpress.data.DataSource({
+            store: RealtorApp.db.vwAV_Djelo,
+            map: function (item) {
+                return new RealtorApp.vwAV_DjeloViewModel(item);
+            },
+            filter: ["OID","=", oid]
+        });
+
+        list.changed.add(function () {
+            tmpDetails(list.items()[0]);
+        });
+
+        list.load();
+
+    }
 
     function updateMap() {
         var mapHeight = "100%",
@@ -121,6 +140,7 @@
         title: title,
         status: status,
         favButtonText: ko.observable(null),
+<<<<<<< HEAD
         tmpData: ko.observable({
             OriginalniNaslov: "Originalni naslov",
             HrvatskiNaslov: "Hrvatski naslov",
@@ -142,9 +162,14 @@
             Koproducenti: [{ Ime: "Udruga Filmaktiv" }],
             Potpora: [{ Ime: "" }],
         }),
+=======
+       
+        tmpData: tmpDetails,
+>>>>>>> 592e62c4b779cdf3a6c1ea78150a83f33913f915
         viewShowing: function () {
+            
             $(".footer-arrow").show();
-            loadData("1");
+            loadData(Number(params.id));
         },
         backText: backText
     };

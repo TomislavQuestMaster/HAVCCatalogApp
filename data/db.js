@@ -15,7 +15,15 @@
             // To allow cookies and HTTP authentication with CORS, uncomment the following line
             // withCredentials: true,
 
-            errorHandler: handleServiceError
+            errorHandler: handleServiceError,
+
+            entities: {
+                AVDjelo: {
+                    key: "OID",
+                    keyType: "Int32"
+                }
+            }
+           
         }
     });
 
