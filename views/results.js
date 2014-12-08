@@ -5,7 +5,7 @@
     var ITEM_LIST = "list",
         ITEM_GALLERY = "gallery";
 
-    var loadPanelVisible = ko.observable(false),
+    var loadPanelVisible = ko.observable(true),
         loadPanelMessage = ko.observable(''),
         listData = ko.observableArray([]),
         isLoaded = ko.observable(false),
@@ -13,8 +13,11 @@
         activeItem = ko.observable(ITEM_GALLERY),
         listCount = ko.observable(0),
         selectedItemIndex = ko.observable(0),
-        alternateNamesAreVisible = ko.observable();
-      
+        alternateNamesAreVisible = ko.observable(),
+        dataSource = ko.observable();
+
+    var avDjela;
+
     function initializeResult() {
         return function (result) {
             listData(result);
@@ -25,16 +28,15 @@
     }
 
     function loadData() {
-        loadPanelVisible(true);
-        alternateNamesAreVisible(areAlternateNamesVisible());
-        loadPanelMessage('Please wait... Loading data');
-        if (params.type === 'searchstring') {
+       
+       // getList();
+  /*      if (params.type === 'searchstring') {
             if (!isPhone) customTitle(params.id);
             RealtorApp.data.getPropertiesByPlaceName(params.id).done(initializeResult());
         } else {
             if (!isPhone) customTitle("My location");
             RealtorApp.data.getPropertiesByCoordinates(params.id).done(initializeResult());
-        }
+        }*/
         
     }
        
@@ -68,20 +70,29 @@
 
     function getList()
     {
+        loadPanelVisible(true);
+        alternateNamesAreVisible(areAlternateNamesVisible());
+        loadPanelMessage('Please wait... Loading data');
+
+        console.log("zovem ga :)");
         var list = new DevExpress.data.DataSource({
             store: RealtorApp.db.vwAV_Djelo,
             map: function (item) {
                 return new RealtorApp.vwAV_DjeloViewModel(item);
             },
-            filter: createFilter(params.id)
+            filter: createFilter(params.id),
+
         });
 
-        list.changed.add(function () {
+        list.loadingChanged.add(function () {
+           
+            console.log(list.items().length);
             listCount(list.items().length);
+            isLoaded(true);
+            loadPanelVisible(false);
         });
 
        return list;
-
     }
 
     function createFilter(word) {
@@ -144,7 +155,7 @@
         viewShowing: function (args) {
             $(".footer-arrow").hide();
             if (!args.viewInfo.renderResult) {
-                loadData();
+               loadData();
             }        
         },
 

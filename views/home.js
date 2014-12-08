@@ -74,6 +74,7 @@ RealtorApp.Home = function (params) {
             $.each(rm, function (index, item) {
              
                 listData.push({
+                    OID:item.OID(),
                     image: item.Images()[0],
                     price: Globalize.format(item.IzvorniNaslov, "c0"),
                     priceCss: "price" + index,
@@ -103,8 +104,9 @@ RealtorApp.Home = function (params) {
             errorMessage("");
         },
         text: ko.observable(""),
-        homeItemClick: function(object) {
-            RealtorApp.app.navigate("Details/" + object.model.ID);
+        homeItemClick: function (object) {
+            console.log(object);
+            RealtorApp.app.navigate("Details/" + object.model.OID);
         },
         searchItemClick: function () {
             if (!this.text()) {

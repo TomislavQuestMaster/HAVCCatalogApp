@@ -143,6 +143,7 @@
        
         tmpData: tmpDetails,
         viewShowing: function () {
+            
             $(".footer-arrow").show();
             loadData(Number(params.id));
         },

@@ -2,7 +2,7 @@
     <div class="gallery" data-bind="dxGallery: { dataSource: dataSource, height: '100%', width: '100%', showIndicator: false, selectedIndex: selectedItemIndex }">
         <div class="gallery-item" data-options="dxTemplate: { name: 'item' }">
             <div class="gallery-container">
-                <p class="gallery-text"><span data-bind="text: $parent.selectedItemIndex"></span> of <span data-bind="text: $parent.listCount"></span> found films</p>
+                <p class="gallery-text"><span data-bind="text: $parent.selectedItemIndex"></span> od <span data-bind="text: $parent.listCount"></span> nađena filmova</p>
                 <div data-bind="dxAction: $parent.resultsItemClick, style: { backgroundImage: Images()[0] }" class="image-container">
                     <div class="fav">
                         <div class="fav-img" data-bind="dxAction: $parent.changeFavState, css: { 'selected': true }"></div>
@@ -22,9 +22,8 @@
                         <span data-bind="text: Redatelj"></span>
                     </div>
                     <div class="place" style="padding-top:0.5em;">
-                        <ul class="zanr-lista">
-                            <li class="zanr-element">Drama</li>
-                            <li class="zanr-element">Triler</li>
+                        <ul class="zanr-lista" data-bind="foreach:Zanr" >
+                            <li class="zanr-element" data-bind="text:$data" >Drama</li>
                         </ul>
                     </div>
 
